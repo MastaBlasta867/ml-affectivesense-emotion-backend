@@ -1,6 +1,7 @@
 # AffectiveSense: Emotion Classification API
 ## Emotion Detector 😄😡😢 — AI‑Powered Facial Emotion Recognition 
 
+A lightweight, end‑to‑end emotion detection system that identifies human facial expressions in real time. Built with a modern React frontend, a clean API layer, and a trained machine‑learning model, this project showcases full‑stack ML deployment—from data to UI.
 ---
 ## ✨ Features
 - Real‑time emotion classification (e.g., happy, sad, angry, surprised, neutral)

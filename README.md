@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://dummyimage.com/1200x250/0d1117/ffffff&text=AffectiveSense+%7C+AI-Powered+Emotion+Classification" alt="AffectiveSense Emotion Detector Banner">
+</p>
+
 # AffectiveSense: Emotion Classification API
 ## Emotion Detector 😄😡😢 — AI‑Powered Facial Emotion Recognition 
 

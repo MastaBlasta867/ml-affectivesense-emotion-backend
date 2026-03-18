@@ -13,11 +13,8 @@ A lightweight, end‑to‑end emotion detection system that identifies human fac
 ## 🧠 Tech Stack
 ## Machine Learning
 - Python
-
-- ensorFlow / PyTorch (adjust based on your actual model)
-
+- TensorFlow / PyTorch (adjust based on your actual model)
 - OpenCV for image preprocessing
-
 - NumPy, Pandas, Scikit-learn
 
 ## Backend
@@ -27,9 +24,7 @@ A lightweight, end‑to‑end emotion detection system that identifies human fac
 
 ## Frontend
 - React + Vite / CRA
-
 - Webcam capture component
-
 - Clean UI with responsive layout
 
 Deployment

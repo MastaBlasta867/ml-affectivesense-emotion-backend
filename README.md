@@ -22,9 +22,7 @@ A lightweight, end‑to‑end emotion detection system that identifies human fac
 
 ## Backend
 - FastAPI / Flask (whichever you used)
-
 - JSON-based prediction endpoints
-
 - CORS-enabled for frontend integration
 
 ## Frontend

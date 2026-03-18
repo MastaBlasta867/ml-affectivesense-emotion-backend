@@ -33,17 +33,12 @@ A lightweight, end‑to‑end emotion detection system that identifies human fac
 - Clean UI with responsive layout
 
 Deployment
-Dockerized backend (if applicable)
-
-Netlify / Vercel / Render (adjust to your setup)
+- Dockerized backend (if applicable)
+- Netlify / Vercel / Render (adjust to your setup)
 
 ## 🚀 How It Works
-The React app captures a frame from the webcam.
-
-The frame is sent to the backend API.
-
-The backend preprocesses the image and feeds it into the ML model.
-
-The model outputs a predicted emotion label and confidence score.
-
-The UI displays the detected emotion in real time.
+- The React app captures a frame from the webcam.
+- The frame is sent to the backend API.
+- The backend preprocesses the image and feeds it into the ML model.
+- The model outputs a predicted emotion label and confidence score.
+- The UI displays the detected emotion in real time.

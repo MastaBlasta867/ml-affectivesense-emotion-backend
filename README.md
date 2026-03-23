@@ -42,3 +42,11 @@ Deployment
 - The backend preprocesses the image and feeds it into the ML model.
 - The model outputs a predicted emotion label and confidence score.
 - The UI displays the detected emotion in real time.
+
+---
+
+## 👤 Author
+
+**Pomolefe (MastaBlasta867)**  
+📧 pomolefe1986@gmail.com  
+Distributed AI Engineer (in progress)

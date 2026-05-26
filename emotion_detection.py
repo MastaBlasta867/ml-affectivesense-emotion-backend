@@ -1,38 +1,19 @@
-import requests
+import numpy as np
+import cv2
+from tensorflow.keras.models import load_model
 
-WATSON_URL = "https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict"
-HEADERS = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"}
+# Load the model WITHOUT compiling (fixes old Keras optimizer issues)
+model = load_model("emotion_model.h5", compile=False)
 
-def emotion_detector(text_to_analyze: str) -> dict:
-    """
-    Sends text to the Watson NLP EmotionPredict API and returns the emotion scores.
-    Returns a dictionary with emotions or an error message.
-    """
+EMOTIONS = ["angry", "disgust", "fear", "happy", "sad", "surprise", "neutral"]
 
-    if not text_to_analyze or not text_to_analyze.strip():
-        return {"error": "No text provided"}
+def predict_emotion(gray_face):
+    face = cv2.resize(gray_face, (64, 64))
+    face = face.astype("float32") / 255.0
+    face = np.expand_dims(face, axis=-1)
+    face = np.expand_dims(face, axis=0)
 
-    payload = {
-        "raw_document": {
-            "text": text_to_analyze
-        }
-    }
-
-    try:
-        response = requests.post(WATSON_URL, headers=HEADERS, json=payload, timeout=10)
-
-        if response.status_code != 200:
-            return {"error": f"Watson API returned status {response.status_code}"}
-
-        data = response.json()
-
-        # Extract the emotion scores from the response
-        emotions = data.get("emotionPredictions", [{}])[0].get("emotion", {})
-
-        return emotions
-
-    except requests.exceptions.Timeout:
-        return {"error": "Request to Watson API timed out"}
-
-    except Exception as e:
-        return {"error": f"Unexpected error: {str(e)}"}
+    preds = model.predict(face)[0]
+    emotion = EMOTIONS[np.argmax(preds)]
+    confidence = float(np.max(preds))
+    return emotion, confidence
